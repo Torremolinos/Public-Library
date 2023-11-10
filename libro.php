@@ -19,7 +19,7 @@ class Libro extends Material
     }
     
     public function __toString() {
-        return parent::__toString() . "<br><b>Número de Páginas:</b> {$this->numPaginas}";
+        return parent::__toString() . "<b>Número de Páginas:</b> {$this->numPaginas}";
     }
 
 }

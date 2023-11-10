@@ -21,7 +21,7 @@ class Dvd extends Material
     }
     
     public function __toString() {
-        return parent::__toString() . "<br><b>Duracion:</b> {$this->duracion}<br><b>Genero:</b> {$this->genero}";
+        return parent::__toString() . "<b>Duracion:</b> {$this->duracion}<br><b>Genero:</b> {$this->genero}";
     }
 
 }
