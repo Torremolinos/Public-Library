@@ -55,22 +55,21 @@ class Material
     }
     public function prestar()
     {
-        // $this->disponible = false; he tenido que suprimir este paso porque siempre te queda en false
-        // incluso cambiandolo con el setter desde la vista. Asi que cuando lo instancio lo dejo en true
-        // Dando el mismo uso a la funcion pero si cambio a true ejecutara la funcion correctamente.
+        //Aqui si es false automaticamente te dice que esta en prestamos pero, si es true pasa a ser false dandote el otro mensaje.
         if ($this->disponible === false) {
-            return "El libro con el titulo: <b>'{$this->titulo}'</b> esta actualmente en prestamo, no se puede prestar.";
+            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="red-text">"esta actualmente <b>en prestamo</b>, no se puede prestar."</span>';
         } else {
-            return 'El libro con el titulo: <b>' .$this->titulo. '</b><span class="green-text">"se ha prestado correctamente."</span>';
+            $this->disponible = false;
+            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="green-text">"se ha prestado correctamente."</span>';
         }
     }
     public function devolver()
     {
-        if ($this->disponible = false) {
-            return "El libro con el <b>titulo:</b> '{$this->titulo}' aún no se ha devuelto.";
+        if ($this->disponible === true) {
+            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="red-text">"No se puede devolver <b>aun no se ha prestamo</b>"</span>';
         } else {
             $this->disponible = true;
-            return 'El libro con el titulo: <b>' .$this->titulo. '</b><span class="green-text">" se devolvio correctamente."</span>';
+            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="green-text">" se devolvio correctamente."</span>';
         }
     }
     public function __toString()
