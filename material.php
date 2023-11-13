@@ -57,19 +57,19 @@ class Material
     {
         //Aqui si es false automaticamente te dice que esta en prestamos pero, si es true pasa a ser false dandote el otro mensaje.
         if ($this->disponible === false) {
-            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="red-text">"esta actualmente <b>en prestamo</b>, no se puede prestar."</span>';
+            return 'El material con el titulo: <b>' . $this->titulo . '</b><span class="red-text">"esta actualmente <b>en prestamo</b>, no se puede prestar."</span>';
         } else {
             $this->disponible = false;
-            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="green-text">"se ha prestado correctamente."</span>';
+            return 'El material con el titulo: <b>' . $this->titulo . '</b><span class="green-text">"se ha prestado correctamente."</span>';
         }
     }
     public function devolver()
     {
         if ($this->disponible === true) {
-            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="red-text">"No se puede devolver <b>aun no se ha prestamo</b>"</span>';
+            return 'El material con el titulo: <b>' . $this->titulo . '</b><span class="red-text">"No se puede devolver <b>aun no se ha prestamo</b>"</span>';
         } else {
             $this->disponible = true;
-            return 'El libro con el titulo: <b>' . $this->titulo . '</b><span class="green-text">" se devolvio correctamente."</span>';
+            return 'El material con el titulo: <b>' . $this->titulo . '</b><span class="green-text">" se devolvio correctamente."</span>';
         }
     }
     public function __toString()
